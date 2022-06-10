@@ -1,0 +1,46 @@
+<%- include("../partials/head",{webTitle:"Formulario"}) %>
+
+  <body>
+
+    <div class="container">
+      <h1 class="text-center my-3">Api de productos con EJS</h1>
+      <hr>
+      <h2>Ingrese los datos del Producto Nuevo</h2>
+      <div class="row">
+        <div class="col-lg-6">
+
+          <form action="/api/productos" method="post">
+            <div class="form-group form-floating my-3">
+              <input id="title" type="text" name="title" placeholder="titulo del producto" class="form-control"
+                required>
+              <label for="title"> Titulo del producto</label>
+            </div>
+
+            <div class="form-group form-floating my-3">
+              <input id="price" type="number" name="price" placeholder="Precio" class="form-control">
+              <label for="price">Precio</label>
+            </div>
+
+            <div class="form-group form-floating my-3">
+              <input id="url" type="url" name="thumbnail" placeholder="URL" class="form-control">
+              <label for="url">URL</label>
+            </div>
+
+            <div>
+              <button type="submit" class="btn btn-primary">Send !</button>
+              <a class="btn btn-success " href="/api/productos" role="button">Ver productos</a>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+  </body>
+
+  </html>

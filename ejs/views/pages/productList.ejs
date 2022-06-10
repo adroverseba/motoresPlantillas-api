@@ -1,0 +1,45 @@
+<%- include("../partials/head",{webTitle:"products"}) %>
+
+  <body>
+    <div class="container">
+      <h1 class="mb-5">Lista de Productos</h1>
+
+      <% if (products.length> 0) { %>
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <td>id</td>
+              <td>titulo</td>
+              <td>precio</td>
+              <td>miniatura</td>
+            </tr>
+          </thead>
+          <tbody>
+            <% products.forEach(prod=> { %>
+              <tr>
+                <td>
+                  <%= prod.id %>
+                </td>
+                <td>
+                  <%= prod.title%>
+                </td>
+                <td>
+                  <%= prod.price%>
+                </td>
+                <td><img src=" <%= prod.thumbnail%>" alt="imagen del producto" height="60px">
+                </td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+
+        <% } else {%>
+          <h3 class="alert alert-danger">No se encontraron datos de productos</h3>
+          <% } %>
+            <a class="btn btn-primary btn-sm my-3 " href="/api" role="button">Cargar productos</a>
+    </div>
+
+
+  </body>
+
+  </html>
